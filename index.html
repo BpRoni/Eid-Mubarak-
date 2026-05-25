@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Eid Mubarak My Love ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -22,11 +23,12 @@ html{
 
 body{
     background:#04151f;
+    background-attachment:fixed;
     color:white;
     overflow-x:hidden;
 }
 
-/* ---------- BACKGROUND ---------- */
+/* ---------- STARS ---------- */
 
 .stars{
     position:fixed;
@@ -45,9 +47,15 @@ body{
 }
 
 @keyframes twinkle{
-    0%,100%{opacity:0.2;}
-    50%{opacity:1;}
+    0%,100%{
+        opacity:0.2;
+    }
+    50%{
+        opacity:1;
+    }
 }
+
+/* ---------- MOON ---------- */
 
 .moon{
     position:fixed;
@@ -71,7 +79,7 @@ body{
     left:30px;
 }
 
-/* ---------- NAV ---------- */
+/* ---------- NAVBAR ---------- */
 
 nav{
     position:fixed;
@@ -79,11 +87,12 @@ nav{
     left:50%;
     transform:translateX(-50%);
     width:90%;
-    max-width:850px;
+    max-width:900px;
     padding:15px 25px;
     border-radius:20px;
     background:rgba(255,255,255,0.08);
     backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -105,7 +114,7 @@ nav a:hover{
     color:#ffd166;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ---------- SECTION ---------- */
 
 section{
     min-height:100vh;
@@ -113,17 +122,19 @@ section{
     justify-content:center;
     align-items:center;
     padding:100px 20px;
-    position:relative;
 }
+
+/* ---------- CARD ---------- */
 
 .card{
     width:90%;
     max-width:850px;
     padding:50px;
-    border-radius:30px;
     text-align:center;
+    border-radius:30px;
     background:rgba(255,255,255,0.08);
     backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
     box-shadow:0 8px 32px rgba(0,0,0,0.3);
     animation:fade 1.5s ease;
 }
@@ -138,6 +149,8 @@ section{
         transform:translateY(0);
     }
 }
+
+/* ---------- HEADINGS ---------- */
 
 h1{
     font-size:4rem;
@@ -157,6 +170,8 @@ p{
     line-height:1.9;
 }
 
+/* ---------- BUTTON ---------- */
+
 button{
     margin-top:30px;
     padding:14px 30px;
@@ -167,6 +182,7 @@ button{
     font-weight:bold;
     cursor:pointer;
     transition:0.3s;
+    font-size:1rem;
 }
 
 button:hover{
@@ -182,17 +198,26 @@ button:hover{
     white-space:nowrap;
     border-right:3px solid white;
     margin:auto;
-    animation:typing 5s steps(40,end) forwards,
+    display:inline-block;
+    max-width:100%;
+    animation:
+    typing 5s steps(40,end) forwards,
     blink .8s infinite;
 }
 
 @keyframes typing{
-    from{width:0}
-    to{width:100%}
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
 }
 
 @keyframes blink{
-    50%{border-color:transparent}
+    50%{
+        border-color:transparent;
+    }
 }
 
 /* ---------- GALLERY ---------- */
@@ -210,13 +235,14 @@ button:hover{
     object-fit:cover;
     border-radius:20px;
     transition:0.4s;
+    box-shadow:0 0 20px rgba(255,255,255,0.15);
 }
 
 .gallery img:hover{
     transform:scale(1.05);
 }
 
-/* ---------- HEARTS ---------- */
+/* ---------- HEART ---------- */
 
 .heart{
     position:fixed;
@@ -230,6 +256,7 @@ button:hover{
         transform:translateY(100vh) scale(0);
         opacity:1;
     }
+
     to{
         transform:translateY(-10vh) scale(1.5);
         opacity:0;
@@ -251,6 +278,7 @@ button:hover{
     min-width:120px;
     border-radius:20px;
     background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
 }
 
 .box span{
@@ -259,25 +287,12 @@ button:hover{
     color:#ffd166;
 }
 
-/* ---------- FIREWORK ---------- */
+/* ---------- FOOTER ---------- */
 
-.firework{
-    position:fixed;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:white;
-    animation:explode 1s ease-out forwards;
-}
-
-@keyframes explode{
-    to{
-        transform:translate(
-        calc(200px - 400px * random()),
-        calc(200px - 400px * random())
-        );
-        opacity:0;
-    }
+.footer{
+    text-align:center;
+    padding:30px;
+    opacity:0.7;
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -301,6 +316,16 @@ button:hover{
         gap:10px;
     }
 
+    nav a{
+        margin:5px;
+    }
+
+    .typing{
+        white-space:normal;
+        border-right:none;
+        width:100%;
+        animation:none;
+    }
 }
 
 </style>
@@ -314,15 +339,17 @@ button:hover{
 <!-- NAVBAR -->
 
 <nav>
-    <h2>Eid ❤️</h2>
 
-    <div>
-        <a href="#welcome">Home</a>
-        <a href="#message">Message</a>
-        <a href="#memory">Memories</a>
-        <a href="#dua">Dua</a>
-        <a href="#countdown">Countdown</a>
-    </div>
+<h2>Eid ❤️</h2>
+
+<div>
+<a href="#welcome">Home</a>
+<a href="#message">Message</a>
+<a href="#memory">Memories</a>
+<a href="#dua">Dua</a>
+<a href="#countdown">Countdown</a>
+</div>
+
 </nav>
 
 <!-- WELCOME -->
@@ -337,15 +364,17 @@ button:hover{
 Someone Special Has A Surprise For You ❤️
 </p>
 
-<button onclick="document.getElementById('music').play()">
-🎵 Play Music
+<br>
+
+<button onclick="playMusic()">
+🎵 Play / Pause Music
 </button>
 
 </div>
 
 </section>
 
-<!-- LOVE MESSAGE -->
+<!-- MESSAGE -->
 
 <section id="message">
 
@@ -354,11 +383,16 @@ Someone Special Has A Surprise For You ❤️
 <h2>My Dear Wife ❤️</h2>
 
 <p>
-আমার প্রিয় বউ আয়েশা, অসংখ্য ভালোবাসা ও ঈদের শুভেচ্ছা।<br><br>
+আমার প্রিয় বউ আয়েশা,  
+অসংখ্য ভালোবাসা ও ঈদের শুভেচ্ছা। ❤️
+<br><br>
 
-তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি।  
-তোমার হাসি আমার প্রতিদিনের শান্তি।  
-আল্লাহ আমাদের সম্পর্ককে সবসময় সুখে ও ভালোবাসায় ভরিয়ে রাখুন। ✨
+তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি।
+তোমার হাসি আমার প্রতিদিনের শান্তি।
+<br><br>
+
+আল্লাহ আমাদের সম্পর্ককে সবসময় সুখে,
+ভালোবাসায় এবং রহমতে ভরিয়ে রাখুন। ✨
 </p>
 
 </div>
@@ -380,8 +414,11 @@ Someone Special Has A Surprise For You ❤️
 <div class="gallery">
 
 <img src="https://i.postimg.cc/VsqPPZWG/a3.jpg">
+
 <img src="https://i.postimg.cc/SNmFSLZF/a5.jpg">
+
 <img src="https://i.postimg.cc/pXPbWQ0t/IMG-20260320-190703362-HDR.jpg">
+
 </div>
 
 </div>
@@ -397,7 +434,9 @@ Someone Special Has A Surprise For You ❤️
 <h2>Dua For Us 🤲</h2>
 
 <p style="font-size:1.4rem; line-height:2;">
+
 "আল্লাহ আমাদের ভালোবাসাকে জান্নাত পর্যন্ত স্থায়ী করুন ❤️"
+
 </p>
 
 <br>
@@ -467,53 +506,90 @@ Thank you for being the most beautiful part of my life 🌙
 
 </section>
 
+<!-- FOOTER -->
+
+<div class="footer">
+Made With ❤️ For Ayesha
+</div>
+
 <!-- AUDIO -->
 
 <audio id="music" loop>
-<source src="‎halal.mp3‎" type="audio/mp3">
+<source src="halal.mp3" type="audio/mpeg">
 </audio>
 
+<!-- SCRIPT -->
+
 <script>
+
+/* ---------- MUSIC ---------- */
+
+function playMusic(){
+
+    const music = document.getElementById("music");
+
+    if(music.paused){
+
+        music.play();
+
+        document.body.style.boxShadow =
+        "0 0 100px #ffd166 inset";
+
+    }else{
+
+        music.pause();
+
+        document.body.style.boxShadow = "none";
+    }
+}
 
 /* ---------- STARS ---------- */
 
 for(let i=0;i<150;i++){
 
-    let star=document.createElement('span');
+    let star = document.createElement('span');
 
-    star.style.left=Math.random()*100+'%';
-    star.style.top=Math.random()*100+'%';
+    star.style.left = Math.random()*100+'%';
 
-    star.style.animationDelay=Math.random()*3+'s';
+    star.style.top = Math.random()*100+'%';
 
-    document.querySelector('.stars').appendChild(star);
+    star.style.animationDelay =
+    Math.random()*3+'s';
+
+    document.querySelector('.stars')
+    .appendChild(star);
 }
 
-/* ---------- HEARTS ---------- */
+/* ---------- FLOATING HEART ---------- */
 
 setInterval(()=>{
 
-    let heart=document.createElement('div');
+    let heart = document.createElement('div');
 
     heart.classList.add('heart');
 
-    heart.innerHTML='❤';
+    heart.innerHTML = '❤';
 
-    heart.style.left=Math.random()*100+'vw';
+    heart.style.left =
+    Math.random()*100+'vw';
 
-    heart.style.fontSize=Math.random()*20+20+'px';
+    heart.style.fontSize =
+    Math.random()*20+20+'px';
 
     document.body.appendChild(heart);
 
     setTimeout(()=>{
+
         heart.remove();
+
     },5000);
 
-},400);
+},900);
 
 /* ---------- COUNTDOWN ---------- */
 
-const targetDate = new Date("March 31, 2027 00:00:00").getTime();
+const targetDate =
+new Date("March 31, 2027 00:00:00").getTime();
 
 setInterval(()=>{
 
@@ -521,18 +597,35 @@ setInterval(()=>{
 
     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000*60*60*24));
+    const days =
+    Math.floor(distance /
+    (1000*60*60*24));
 
-    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const hours =
+    Math.floor((distance %
+    (1000*60*60*24)) /
+    (1000*60*60));
 
-    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const minutes =
+    Math.floor((distance %
+    (1000*60*60)) /
+    (1000*60));
 
-    const seconds = Math.floor((distance % (1000*60)) / 1000);
+    const seconds =
+    Math.floor((distance %
+    (1000*60)) / 1000);
 
-    document.getElementById('days').innerHTML = days;
-    document.getElementById('hours').innerHTML = hours;
-    document.getElementById('minutes').innerHTML = minutes;
-    document.getElementById('seconds').innerHTML = seconds;
+    document.getElementById('days')
+    .innerHTML = days;
+
+    document.getElementById('hours')
+    .innerHTML = hours;
+
+    document.getElementById('minutes')
+    .innerHTML = minutes;
+
+    document.getElementById('seconds')
+    .innerHTML = seconds;
 
 },1000);
 
@@ -540,28 +633,34 @@ setInterval(()=>{
 
 function fireworks(){
 
-    for(let i=0;i<100;i++){
+    for(let i=0;i<120;i++){
 
-        let fw=document.createElement('div');
+        let spark =
+        document.createElement('div');
 
-        fw.classList.add('heart');
+        spark.classList.add('heart');
 
-        fw.innerHTML='✨';
+        spark.innerHTML = '✨';
 
-        fw.style.left=Math.random()*100+'vw';
+        spark.style.left =
+        Math.random()*100+'vw';
 
-        fw.style.top=Math.random()*100+'vh';
+        spark.style.top =
+        Math.random()*100+'vh';
 
-        fw.style.fontSize=Math.random()*30+10+'px';
+        spark.style.fontSize =
+        Math.random()*30+10+'px';
 
-        document.body.appendChild(fw);
+        document.body.appendChild(spark);
 
         setTimeout(()=>{
-            fw.remove();
+
+            spark.remove();
+
         },3000);
     }
 
-    alert("Eid Mubarak My Ayesha❤️");
+    alert("Eid Mubarak My Ayesha ❤️");
 }
 
 </script>
