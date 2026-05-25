@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eid Mubarak My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#04151f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-3;
+}
+
+.stars span{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:0.2;}
+    50%{opacity:1;}
+}
+
+.moon{
+    position:fixed;
+    top:50px;
+    right:70px;
+    width:120px;
+    height:120px;
+    background:#fff5cc;
+    border-radius:50%;
+    box-shadow:0 0 50px #fff5cc;
+    z-index:-2;
+}
+
+.moon::before{
+    content:'';
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#04151f;
+    border-radius:50%;
+    left:30px;
+}
+
+/* ---------- NAV ---------- */
+
+nav{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:850px;
+    padding:15px 25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+}
+
+nav h2{
+    color:#ffd166;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd166;
+}
+
+/* ---------- SECTIONS ---------- */
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:100px 20px;
+    position:relative;
+}
+
+.card{
+    width:90%;
+    max-width:850px;
+    padding:50px;
+    border-radius:30px;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    font-size:4rem;
+    color:#ffd166;
+    margin-bottom:20px;
+    text-shadow:0 0 20px #ffd166;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+    color:#ffd166;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.9;
+}
+
+button{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ffd166;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.07);
+    background:white;
+}
+
+/* ---------- TYPING ---------- */
+
+.typing{
+    width:0;
+    overflow:hidden;
+    white-space:nowrap;
+    border-right:3px solid white;
+    margin:auto;
+    animation:typing 5s steps(40,end) forwards,
+    blink .8s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:100%}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+/* ---------- GALLERY ---------- */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ---------- HEARTS ---------- */
+
+.heart{
+    position:fixed;
+    color:#ff4d6d;
+    animation:float 5s linear infinite;
+    z-index:-1;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh) scale(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* ---------- COUNTDOWN ---------- */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.box{
+    padding:25px;
+    min-width:120px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+}
+
+.box span{
+    font-size:2rem;
+    display:block;
+    color:#ffd166;
+}
+
+/* ---------- FIREWORK ---------- */
+
+.firework{
+    position:fixed;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    animation:explode 1s ease-out forwards;
+}
+
+@keyframes explode{
+    to{
+        transform:translate(
+        calc(200px - 400px * random()),
+        calc(200px - 400px * random())
+        );
+        opacity:0;
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    h2{
+        font-size:2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="moon"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+    <h2>Eid ❤️</h2>
+
+    <div>
+        <a href="#welcome">Home</a>
+        <a href="#message">Message</a>
+        <a href="#memory">Memories</a>
+        <a href="#dua">Dua</a>
+        <a href="#countdown">Countdown</a>
+    </div>
+</nav>
+
+<!-- WELCOME -->
+
+<section id="welcome">
+
+<div class="card">
+
+<h1>Eid Mubarak 🌙</h1>
+
+<p class="typing">
+Someone Special Has A Surprise For You ❤️
+</p>
+
+<button onclick="document.getElementById('music').play()">
+🎵 Play Music
+</button>
+
+</div>
+
+</section>
+
+<!-- LOVE MESSAGE -->
+
+<section id="message">
+
+<div class="card">
+
+<h2>My Dear Wife ❤️</h2>
+
+<p>
+আমার প্রিয় বউ আয়েশা, অসংখ্য ভালোবাসা ও ঈদের শুভেচ্ছা।<br><br>
+
+তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি।  
+তোমার হাসি আমার প্রতিদিনের শান্তি।  
+আল্লাহ আমাদের সম্পর্ককে সবসময় সুখে ও ভালোবাসায় ভরিয়ে রাখুন। ✨
+</p>
+
+</div>
+
+</section>
+
+<!-- MEMORIES -->
+
+<section id="memory">
+
+<div class="card">
+
+<h2>Beautiful Memories 📸</h2>
+
+<p>
+আমাদের প্রতিটি মুহূর্ত আমার কাছে বিশেষ ❤️
+</p>
+
+<div class="gallery">
+
+<img src="https://i.postimg.cc/VsqPPZWG/a3.jpg">
+<img src="https://i.postimg.cc/SNmFSLZF/a5.jpg">
+<img src="https://i.postimg.cc/pXPbWQ0t/IMG-20260320-190703362-HDR.jpg">
+</div>
+
+</div>
+
+</section>
+
+<!-- DUA -->
+
+<section id="dua">
+
+<div class="card">
+
+<h2>Dua For Us 🤲</h2>
+
+<p style="font-size:1.4rem; line-height:2;">
+"আল্লাহ আমাদের ভালোবাসাকে জান্নাত পর্যন্ত স্থায়ী করুন ❤️"
+</p>
+
+<br>
+
+<p>
+May Allah bless our relationship with endless happiness,
+peace and love forever ✨
+</p>
+
+</div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section id="countdown">
+
+<div class="card">
+
+<h2>Next Eid Countdown ⏳</h2>
+
+<div class="countdown">
+
+<div class="box">
+<span id="days">0</span>
+Days
+</div>
+
+<div class="box">
+<span id="hours">0</span>
+Hours
+</div>
+
+<div class="box">
+<span id="minutes">0</span>
+Minutes
+</div>
+
+<div class="box">
+<span id="seconds">0</span>
+Seconds
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section>
+
+<div class="card">
+
+<h1>Eid Mubarak My Love ❤️</h1>
+
+<p>
+Thank you for being the most beautiful part of my life 🌙
+</p>
+
+<button onclick="fireworks()">
+🎆 Surprise
+</button>
+
+</div>
+
+</section>
+
+<!-- AUDIO -->
+
+<audio id="music" loop>
+<source src="‎halal.mp3‎" type="audio/mp3">
+</audio>
+
+<script>
+
+/* ---------- STARS ---------- */
+
+for(let i=0;i<150;i++){
+
+    let star=document.createElement('span');
+
+    star.style.left=Math.random()*100+'%';
+    star.style.top=Math.random()*100+'%';
+
+    star.style.animationDelay=Math.random()*3+'s';
+
+    document.querySelector('.stars').appendChild(star);
+}
+
+/* ---------- HEARTS ---------- */
+
+setInterval(()=>{
+
+    let heart=document.createElement('div');
+
+    heart.classList.add('heart');
+
+    heart.innerHTML='❤';
+
+    heart.style.left=Math.random()*100+'vw';
+
+    heart.style.fontSize=Math.random()*20+20+'px';
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+
+},400);
+
+/* ---------- COUNTDOWN ---------- */
+
+const targetDate = new Date("March 31, 2027 00:00:00").getTime();
+
+setInterval(()=>{
+
+    const now = new Date().getTime();
+
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementById('seconds').innerHTML = seconds;
+
+},1000);
+
+/* ---------- FIREWORK ---------- */
+
+function fireworks(){
+
+    for(let i=0;i<100;i++){
+
+        let fw=document.createElement('div');
+
+        fw.classList.add('heart');
+
+        fw.innerHTML='✨';
+
+        fw.style.left=Math.random()*100+'vw';
+
+        fw.style.top=Math.random()*100+'vh';
+
+        fw.style.fontSize=Math.random()*30+10+'px';
+
+        document.body.appendChild(fw);
+
+        setTimeout(()=>{
+            fw.remove();
+        },3000);
+    }
+
+    alert("Eid Mubarak My Ayesha❤️");
+}
+
+</script>
+
+</body>
+</html>
